@@ -1,32 +1,50 @@
-import logo from './logo.svg';
+
 import './App.css';
 import React, {useState, useEffect } from 'react';
+import axios from "axios";
 function App() {
-  const [data , setData] = useState(0);
+  const [data , setData] = useState([]);
+  const[Author, setAuthor] = useState();
+  const[Quote, setQuote] = useState();
+ 
+  useEffect(() =>{
+    axios.get("http://localhost:5050/")
+    .then((res) => setData(res.data))
+  },[]);
 
-    function getQuote(){
-      try{
-      fetch('https://api.quotable.io/random').then(response => response.json()).then(
-        (quote)=>{
-          setData(quote);
-        }
+  const HandleSubmit = async () => {
+    try{
+      const res=axios.post("http://localhost:5050/",{
+        "quote": Quote,
+        "author":Author 
+      }
       )
     }
     catch{
       alert("Error");
     }
   }
+  
   return (
     <div className="App">
       <header className="App-header">
         <style>@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
-        @import url('https://fonts.googleapis.com/css2?family=Sacramento&display=swap');
-          </style>
-        <h1 className='Heading'>Random Quote Generator</h1> 
-        <h3 className='Quote'>Quote: {data.content}</h3>
-        <h3 className='Author'>Author: {data.author}</h3>
+          @import url('https://fonts.googleapis.com/css2?family=Sacramento&display=swap');
+        </style>
+        <h1 className='Heading'>Random Quote Generator</h1>
+        <h3 className='Quote'>Quote:{data.map((item) => (<div>{item.quote}</div>))}</h3>
+        <h3 className='Author'>Author:{data.map((item) => (<div>{item.author}</div>))}</h3>
         <br></br>
-        <button onClick={getQuote} className='Generator'>Get Quote</button>
+        <h2>Contribute to the Quotes Magzine!</h2>
+        <div>
+          <label>Quote :</label>
+          <input onChange={(e) => (setQuote(e.target.value))}/>
+       </div>
+       <div>
+          <label>Author :</label>
+          <input onChange={(e) => (setAuthor(e.target.value))}/>
+       </div>      
+        <button className='Generator' onClick={HandleSubmit}>Submit</button>
 
       </header>
     </div>
