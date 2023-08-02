@@ -13,6 +13,7 @@ function App() {
   },[]);
 
   const HandleSubmit = async () => {
+    <h3>Thank you for contributing!</h3>
     try{
       const res=axios.post("http://localhost:5050/",{
         "quote": Quote,
@@ -44,7 +45,7 @@ function App() {
           <label>Author :</label>
           <input onChange={(e) => (setAuthor(e.target.value))}/>
        </div>      
-        <button className='Generator' onClick={HandleSubmit}>Submit</button>
+        <button className='Generator' onClick={{HandleSubmit}}>Submit</button>
 
       </header>
     </div>
