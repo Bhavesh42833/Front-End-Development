@@ -8,14 +8,13 @@ function App() {
   const[Quote, setQuote] = useState();
  
   useEffect(() =>{
-    axios.get("http://localhost:5050/")
+    axios.get("https://random-quote-generator-u26y.onrender.com")
     .then((res) => setData(res.data))
   },[]);
 
   const HandleSubmit = async () => {
-    <h3>Thank you for contributing!</h3>
     try{
-      const res=axios.post("http://localhost:5050/",{
+      const res=axios.post("https://random-quote-generator-u26y.onrender.com",{
         "quote": Quote,
         "author":Author 
       }
