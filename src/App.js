@@ -8,13 +8,13 @@ function App() {
   const[Quote, setQuote] = useState();
  
   useEffect(() =>{
-    axios.get("http://localhost:5050/")
+    axios.get("https://ap-south-1.aws.data.mongodb-api.com/app/data-qvdgv/endpoint/data/v1")
     .then((res) => setData(res.data))
   },[]);
 
   const HandleSubmit = async () => {
     try{
-      const res=axios.post("http://localhost:5050/",{
+      const res=axios.post("https://ap-south-1.aws.data.mongodb-api.com/app/data-qvdgv/endpoint/data/v1",{
         "quote": Quote,
         "author":Author 
       }
