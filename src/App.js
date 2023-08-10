@@ -44,7 +44,7 @@ function App() {
           <label>Author :</label>
           <input onChange={(e) => (setAuthor(e.target.value))}/>
        </div>      
-        <button className='Generator' onClick={{HandleSubmit}}>Submit</button>
+        <button className='Generator' onClick={HandleSubmit}>Submit</button>
 
       </header>
     </div>
