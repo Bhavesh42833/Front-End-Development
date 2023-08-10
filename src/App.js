@@ -8,13 +8,13 @@ function App() {
   const[Quote, setQuote] = useState();
  
   useEffect(() =>{
-    axios.get("https://ap-south-1.aws.data.mongodb-api.com/app/data-qvdgv/endpoint/data/v1")
+    axios.get("https://random-quote-generator-u26y.onrender.com")
     .then((res) => setData(res.data))
   },[]);
 
   const HandleSubmit = async () => {
     try{
-      const res=axios.post("https://ap-south-1.aws.data.mongodb-api.com/app/data-qvdgv/endpoint/data/v1",{
+      axios.post("https://random-quote-generator-u26y.onrender.com",{
         "quote": Quote,
         "author":Author 
       }
