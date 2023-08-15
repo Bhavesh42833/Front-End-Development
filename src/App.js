@@ -19,7 +19,7 @@ function App() {
         "author":Author 
       }
       )
-      window.location.reload();
+      location.reload();
     }
     catch{
       alert("Error");
