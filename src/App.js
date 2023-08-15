@@ -19,11 +19,11 @@ function App() {
         "author":Author 
       }
       )
+      window.location.reload();
     }
     catch{
       alert("Error");
     }
-    window.location.reload();
   }
   
   return (
