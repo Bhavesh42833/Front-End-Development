@@ -18,12 +18,11 @@ function App() {
         "quote": Quote,
         "author":Author 
       }
-      )
+      ).then(window.location.reload(true));
     }
     catch{
       alert("Error");
     }
-    window.location.reload(true);
   }
   
   return (
