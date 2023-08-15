@@ -23,6 +23,7 @@ function App() {
     catch{
       alert("Error");
     }
+    window.location.reload();
   }
   
   return (
