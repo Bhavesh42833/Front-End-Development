@@ -18,7 +18,7 @@ function App() {
         "quote": Quote,
         "author":Author 
       }
-      ).then(window.location.reload(true));
+      ).then(() => {window.location.reload(true)});
     }
     catch{
       alert("Error");
