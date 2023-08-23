@@ -87,3 +87,9 @@ input:selection {
   border:3px solid #e8ecec;
 
 }
+@media(width<821px){
+  input{
+  width:110px;
+  height:4px;
+}
+}
