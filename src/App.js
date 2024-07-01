@@ -8,13 +8,13 @@ function App() {
   const[Quote, setQuote] = useState();
  
   useEffect(() =>{
-    axios.get("https://random-quote-generator-u26y.onrender.com")
+    axios.get("https://random-quote-generator-u26y.onrender.com/")
     .then((res) => setData(res.data))
   },[]);
 
   const HandleSubmit = async () => {
     try{
-      axios.post("https://random-quote-generator-u26y.onrender.com",{
+      axios.post("https://random-quote-generator-u26y.onrender.com/",{
         "quote": Quote,
         "author":Author 
       }
