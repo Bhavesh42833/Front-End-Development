@@ -24,7 +24,7 @@ function App() {
       alert("Error");
     }
   }
-  
+  const val=Math.floor(Math.random() * data.length);
   return (
     <div className="App">
       <header className="App-header">
@@ -32,10 +32,10 @@ function App() {
           @import url('https://fonts.googleapis.com/css2?family=Sacramento&display=swap');
         </style>
         <h1 className='Heading'>Random Quote Generator</h1>
-        <h3 className='Quote'>Quote:{data.map((item) => (<div>{item.quote}</div>))}</h3>
-        <h3 className='Author'>Author:{data.map((item) => (<div>{item.author}</div>))}</h3>
+        <h3 className='Quote'>Quote:{<div>{data[val].quote}</div>}</h3>
+        <h3 className='Author'>Author:{<div>{data[val].author}</div>}</h3>
         <br></br>
-        <h2>Contribute to the Quotes Magzine!</h2>
+        <h2>Contribute to the Quotes Magazine!</h2>
         <div>
           <label>Quote :</label>
           <input onChange={(e) => (setQuote(e.target.value))}/>
