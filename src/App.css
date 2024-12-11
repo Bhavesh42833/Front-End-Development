@@ -75,6 +75,13 @@ input{
   color:#3f3f3e;
   
 }
+.Loading{
+  color:#3f3f3e;
+  justify-content: center;
+  margin: auto;
+  font-family: 'Montserrat', sans-serif;
+  font-size: large;
+}
 label{
   color:#e8ecec;
 }
