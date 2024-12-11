@@ -40,7 +40,7 @@ function App() {
   };
 
   if (!data.length || randomIndex === null) {
-    return <div className="Loading">Loading...</div>;
+    return <div className="Loading"><h1 className="Loader">Loading...</h1></div>;
   }
 
   return (
